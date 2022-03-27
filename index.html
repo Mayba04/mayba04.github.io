@@ -9,6 +9,27 @@
                 font-size: 2em;
             }
         </style>
+        <script type="text/javascript">
+            function send()
+            {
+                var valid = true;
+                var elems = document.forms[0].elements;
+                for(var i=0; i < document.forms[0].length; i++){
+                    if( elems[i].getAttribute('type') == 'text' ||
+                    elems[i].getAttribute('type') == 'password' ||
+                    elems[i].getAttribute('type') == 'email') {
+                           if(elems[i].value == '') {
+                               elems[i].style.border = '2px solid red';
+                               valid = false;
+                           }
+                       }
+                }
+                if(!valid) {
+                    alert('Заповніть всі поля !!!');
+                    return false;
+                }
+            }
+        </script>
     </HEAD>
     <BODY background="images/bg.jpg">
         <table border="1" align="center" celipadding="10">
@@ -41,9 +62,9 @@
                     <p align="right"><a href="#">Інші...</a></p>
                 </ul>
                 </font>
-
+                <hr>
                 <H1 align="center"><font color="green">Реєстрація</font></H1>
-                    <form action="forma.php" method="post" onsubmit="return send();"></form>
+                    <form action="forma.php" method="post" onsubmit="return send();">
                         <TABLE align="center" bgcolor="#ccc">
                             <tr>
                                 <td><font clolor="green">Прізвище</font></td>
@@ -62,14 +83,13 @@
                                 <td><input type="password" size="10" maxlength="20" name="password"></td>
                             </tr>
                         </table>
+
                         <p align="center">
                             <input type="submit" value="Зареєструватись">
                             <input type="reset" value="Очистити">
                         </p>
                     </form>
                     <hr>
-                
-
                 </td>
                 <td width="70%"><font size="5">
                   
