@@ -9,6 +9,11 @@
                 font-size: 2em;
             }
         </style>
+        <script src="js/clock.js"></script>
+        <script>
+            window.onload = function(){
+            setInterval(clockPainting, 1000);}
+        </script>
         <script type="text/javascript">
             function send()
             {
@@ -35,6 +40,7 @@
         <table border="1" align="center" celipadding="10">
             <tr>
                 <td background="images/bg-3.jpg" colspan="2" height="150" align="right" hspace="5">
+                    <img src="images/logo.png" height="140" width="140" align="left">
                     <font size="5"color="Maroon"><h1 class="shadowtext">Cайт web-студії "Web-DECO"</h1></font>
                 </td>
             </tr>
@@ -51,6 +57,8 @@
             </tr>
             <tr>
                 <td width="30%" valign="top">
+                    <center><canvas id="canvas" height="120" width="120"></canvas></center>
+                    <hr>
                     <font size="5" color="navy"><h2>Новини</h2></font>
                     <font size="5">
                 <ul>
@@ -65,7 +73,7 @@
                 <hr>
                 <H1 align="center"><font color="green">Реєстрація</font></H1>
                     <form action="forma.php" method="post" onsubmit="return send();">
-                        <TABLE align="center" bgcolor="#ccc">
+                        <TABLE align="center" gbcolor="#ccc">
                             <tr>
                                 <td><font clolor="green">Прізвище</font></td>
                                 <td><input type="text" size="10" maxlength="20" name="name2"></td>
